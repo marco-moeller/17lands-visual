@@ -126,6 +126,16 @@ section {
   border-radius: 12px;
 }
 
+footer {
+  color: #b2b2b2;
+  text-align: center;
+  margin: auto;
+  font-size: 0.75rem;
+  padding: 1em;
+  max-width: 1000px;
+  line-height: 1.5;
+}
+
 /* -- UTILITY -- */
 
 .selected {
