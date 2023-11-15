@@ -3,6 +3,7 @@
 import { getCardRatings } from "@/API/17lands";
 import FilterButtons from "@/components/FilterButtons";
 import Loading from "@/components/Loading";
+import { expansionsData } from "@/data/expansions";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 
@@ -11,8 +12,8 @@ export default function Home() {
   const [filteredCards, setFilteredCards] = useState([]);
   const [rarityFilter, setRarityFilter] = useState([]);
   const [colorFilter, setColorFilter] = useState([]);
-  const [expansions, setExpansions] = useState([]);
-  const [selectedExpansion, setSeletedExpansion] = useState("WOE");
+  const expansions = expansionsData;
+  const [selectedExpansion, setSeletedExpansion] = useState(expansions[0]);
   const [loading, setLoading] = useState(false);
 
   const sortByGIHWR = (array) => {
@@ -114,18 +115,6 @@ export default function Home() {
   useEffect(() => {
     setFilteredCards(cards);
   }, [cards]);
-
-  useEffect(() => {
-    fetch("https://www.17lands.com/data/expansions", {
-      header: { Accept: "text/html" },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setExpansions(data);
-        setSeletedExpansion(data[0]);
-      })
-      .catch((error) => console.log(error));
-  }, []);
 
   return (
     <main>
