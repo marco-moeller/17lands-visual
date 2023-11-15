@@ -120,7 +120,10 @@ export default function Home() {
       header: { Accept: "text/html" },
     })
       .then((response) => response.json())
-      .then((data) => setExpansions(data))
+      .then((data) => {
+        setExpansions(data);
+        setSeletedExpansion(data[0]);
+      })
       .catch((error) => console.log(error));
   }, []);
 
