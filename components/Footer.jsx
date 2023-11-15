@@ -11,7 +11,9 @@ const Footer = () => {
         Wizards of the Coast, LLC, a subsidiary of Hasbro, Inc. This site is not
         produced by or endorsed by Wizards of the Coast.
       </p>{" "}
-      <p>Everythibg else you see - © Marco Moeller - 2023</p>
+      <p>
+        Everythibg else you see - © Marco Moeller - {new Date().getFullYear()}
+      </p>
     </footer>
   );
 };
