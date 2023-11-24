@@ -1,8 +1,4 @@
 export const colorsData = [
-  {
-    name: "colorless",
-    colors: [],
-  },
   { name: "white", colors: ["W"] },
   { name: "blue", colors: ["U"] },
   { name: "black", colors: ["B"] },
@@ -38,5 +34,9 @@ export const colorsData = [
       "UBRG",
       "WUBRG",
     ],
+  },
+  {
+    name: "colorless",
+    colors: [],
   },
 ];

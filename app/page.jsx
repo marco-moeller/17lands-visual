@@ -4,6 +4,7 @@ import { getCardRatings } from "@/API/17lands";
 import FilterButtons from "@/components/FilterButtons";
 import Loading from "@/components/Loading";
 import { expansionsData } from "@/data/expansions";
+import { formatsData } from "@/data/formats";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 
@@ -13,7 +14,11 @@ export default function Home() {
   const [rarityFilter, setRarityFilter] = useState([]);
   const [colorFilter, setColorFilter] = useState([]);
   const expansions = expansionsData;
-  const [selectedExpansion, setSeletedExpansion] = useState(expansions[0]);
+  const [selectedExpansion, setSelectedExpansion] = useState(expansions[0]);
+  const formats = formatsData;
+  const [selectedFormat, setSelectedFormat] = useState(
+    formats[0] || PremierDraft
+  );
   const [loading, setLoading] = useState(false);
 
   const sortByGIHWR = (array) => {
@@ -72,8 +77,12 @@ export default function Home() {
     );
   };
 
-  const handleChange = (event) => {
-    setSeletedExpansion(event.target.value);
+  const handleExpansionChange = (event) => {
+    setSelectedExpansion(event.target.value);
+  };
+
+  const handleFormatChange = (event) => {
+    setSelectedFormat(event.target.value);
   };
 
   function getCurrentDate() {
@@ -101,8 +110,8 @@ export default function Home() {
       setCards(
         await getCardRatings(
           selectedExpansion,
-          "PremierDraft",
-          "2022-01-01",
+          selectedFormat,
+          "2019-01-01",
           getCurrentDate()
         )
       );
@@ -110,7 +119,7 @@ export default function Home() {
     };
     setLoading(true);
     fetchCards();
-  }, [selectedExpansion]);
+  }, [selectedExpansion, selectedFormat]);
 
   useEffect(() => {
     setFilteredCards(cards);
@@ -119,11 +128,19 @@ export default function Home() {
   return (
     <main>
       <nav>
-        <select value={selectedExpansion} onChange={handleChange}>
-          <option value="">-- select Expansion --</option>
+        <select value={selectedExpansion} onChange={handleExpansionChange}>
+          <option value="">-- Select Expansion --</option>
           {expansions.map((expansion) => (
             <option key={nanoid()} value={expansion}>
               {expansion}
+            </option>
+          ))}
+        </select>
+        <select value={selectedFormat} onChange={handleFormatChange}>
+          <option value="">-- Select Format --</option>
+          {formats.map((format) => (
+            <option key={nanoid()} value={format}>
+              {format}
             </option>
           ))}
         </select>
