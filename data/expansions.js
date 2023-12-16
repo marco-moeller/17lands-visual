@@ -1,4 +1,5 @@
 export const expansionsData = [
+  "KTK",
   "LCI",
   "WOE",
   "LTR",
@@ -27,5 +28,5 @@ export const expansionsData = [
   "WAR",
   "DOM",
   "GRN",
-  "RNA",
+  "RNA"
 ];
