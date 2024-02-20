@@ -3,6 +3,7 @@
 import { getCardRatings } from "@/API/17lands";
 import FilterButtons from "@/components/FilterButtons";
 import Loading from "@/components/Loading";
+import Modal from "@/components/Modal";
 import { expansionsData } from "@/data/expansions";
 import { formatsData } from "@/data/formats";
 import { nanoid } from "nanoid";
@@ -46,7 +47,7 @@ export default function Home() {
       U: "blue",
       B: "black",
       R: "red",
-      G: "green",
+      G: "green"
     };
     if (cardColor === "") {
       return colorFilter.indexOf("colorless") >= 0;
@@ -164,6 +165,7 @@ export default function Home() {
           );
         })}
       </section>
+      <Modal>blubb</Modal>
     </main>
   );
 }

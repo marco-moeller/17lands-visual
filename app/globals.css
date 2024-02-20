@@ -140,6 +140,15 @@ footer {
   line-height: 1.5;
 }
 
+/* -- MODAL -- */
+.modal {
+  top: 0;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 /* -- UTILITY -- */
 
 .selected {
