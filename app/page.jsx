@@ -165,7 +165,6 @@ export default function Home() {
           );
         })}
       </section>
-      <Modal>blubb</Modal>
     </main>
   );
 }
