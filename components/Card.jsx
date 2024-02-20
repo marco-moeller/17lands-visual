@@ -8,6 +8,7 @@ function Card({ card }) {
     <>
       <div className="card-container" onClick={toggle}>
         <h2 className="win-rate">
+          <p className="label">GIHWR</p>
           {(card.ever_drawn_win_rate * 100).toFixed(2)}%
         </h2>
         <img className="card-img" src={card.url} alt="card" />

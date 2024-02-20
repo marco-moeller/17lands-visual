@@ -126,6 +126,11 @@ section {
   padding: 0.1em;
 }
 
+.label {
+  font-size: 0.7rem;
+  margin-bottom: -0.5em;
+}
+
 .card-img {
   border-radius: 12px;
 }
