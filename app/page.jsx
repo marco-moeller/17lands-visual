@@ -3,11 +3,11 @@
 import { getCardRatings } from "@/API/17lands";
 import FilterButtons from "@/components/FilterButtons";
 import Loading from "@/components/Loading";
-import Modal from "@/components/Modal";
 import { expansionsData } from "@/data/expansions";
 import { formatsData } from "@/data/formats";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
+import Card from "@/components/Card";
 
 export default function Home() {
   const [cards, setCards] = useState([]);
@@ -155,14 +155,7 @@ export default function Home() {
       {loading && <Loading />}
       <section>
         {sortByGIHWR(filteredCards).map((card) => {
-          return (
-            <div className="card-container" key={nanoid()}>
-              <h2 className="win-rate">
-                {(card.ever_drawn_win_rate * 100).toFixed(2)}%
-              </h2>
-              <img className="card-img" src={card.url} alt="card" />
-            </div>
-          );
+          return <Card card={card} key={nanoid()} />;
         })}
       </section>
     </main>

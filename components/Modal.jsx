@@ -1,5 +1,9 @@
-function Modal({ children }) {
-  return <div className="modal">{children}</div>;
+function Modal({ children, toggle }) {
+  return (
+    <div className="modal" onClick={toggle}>
+      {children}
+    </div>
+  );
 }
 
 export default Modal;
