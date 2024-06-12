@@ -163,6 +163,38 @@ footer a {
   justify-content: center;
 }
 
+.flip--btn {
+  position: absolute;
+  margin: 0;
+  border-radius: 50px;
+  background-color: transparent;
+  width: 15%;
+  max-width: 80px;
+  max-height: 80px;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  border-radius: 100%;
+  background-color: rgba(245, 245, 245, 0.75);
+  display: flex;
+  opacity: 0.7;
+}
+
+.flip--btn:hover,
+.flip--btn:active {
+  opacity: 1;
+}
+
+.flip--btn svg {
+  height: 100%;
+  width: 100%;
+  padding: 0.25em;
+  color: black;
+}
+
 /* -- UTILITY -- */
 
 .selected {
