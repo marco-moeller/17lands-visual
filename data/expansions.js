@@ -1,4 +1,4 @@
-export const expansionsData = ["BLB","MH3","OTJ","MKM",
+export const expansionsData = ["DSK","BLB","MH3","OTJ","MKM",
   "KTK",
   "LCI",
   "WOE",
