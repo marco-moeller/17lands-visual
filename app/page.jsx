@@ -95,6 +95,14 @@ export default function Home() {
     return formattedDate;
   }
 
+  const useNormalSizedImg = (card) => {
+    return {
+      ...card,
+      url: card.url.replace("large", "normal"),
+      url_back: card.url_back.replace("large", "normal")
+    };
+  };
+
   useEffect(() => {
     const applyFilter = () => {
       setFilteredCards(filterByRarity(filterByColor(cards)));
@@ -123,7 +131,7 @@ export default function Home() {
   }, [selectedExpansion, selectedFormat]);
 
   useEffect(() => {
-    setFilteredCards(cards);
+    setFilteredCards(cards.map((card) => useNormalSizedImg(card)));
   }, [cards]);
 
   return (
